@@ -40,7 +40,7 @@ module Flashcards
     end
 
     def play
-      puts "#{front} > "
+      print "#{front} > "
       guess = gets.chomp
       if correct? guess
         puts "Correct"
@@ -82,18 +82,21 @@ module Flashcards
   end
 end
 
-#Create a card that has multiple answers
-card = Flashcards::MultipleAnswerCard.new("Violin", "baoirin, virroin")
+#Create a new deck
+deck = Flashcards::Deck.new("Addition")
 
-#Create a a new deck
-deck = Flashcards::Deck.new("Japanese")
+
+# Addition Cards
+addition1 = Flashcards::Card.new("1+1", "2")
+addition2 = Flashcards::Card.new("1+2", "3")
+addition3 = Flashcards::Card.new("1+3", "4")
+
 # Append the card to the deck
-deck << card
-#Create another deck
-deck2 = Flashcards::Deck.new("Russian")
+deck << addition1
+deck << addition2
+deck << addition3
 
-#Instantiate the application
+#Instantiate the applicati
 app = Flashcards::Application.new
 app << deck
-app << deck2
 app.play
