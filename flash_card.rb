@@ -1,10 +1,11 @@
+# Module for encapsulation
 module Flashcards
   #Application class
   class Application
     def initialize
       @decks = []
     end
-
+# An append method
     def << deck
       @decks << deck
     end
@@ -81,11 +82,12 @@ deck = Flashcards::Deck.new("Addition")
 addition1 = Flashcards::Card.new("1+1", "2")
 addition2 = Flashcards::Card.new("1+2", "3")
 addition3 = Flashcards::Card.new("1+3", "4")
-
+addition4 = Flashcards::Card.new("1+4", "5")
 # Append the card to the deck
 deck << addition1
 deck << addition2
 deck << addition3
+deck << addition4
 
 #Instantiate the application
 app = Flashcards::Application.new
