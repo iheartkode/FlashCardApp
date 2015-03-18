@@ -49,14 +49,6 @@ module Flashcards
       end
     end
   end
-  #Multiple Answer Class
-  class MultipleAnswerCard < Card
-    def correct?(guess)
-      answers = @back.split(",")
-      answers.any? { |answer| answer == guess }
-    end
-  end
-
 
   # Deck class
   class Deck
@@ -85,7 +77,6 @@ end
 #Create a new deck
 deck = Flashcards::Deck.new("Addition")
 
-
 # Addition Cards
 addition1 = Flashcards::Card.new("1+1", "2")
 addition2 = Flashcards::Card.new("1+2", "3")
@@ -96,7 +87,7 @@ deck << addition1
 deck << addition2
 deck << addition3
 
-#Instantiate the applicati
+#Instantiate the application
 app = Flashcards::Application.new
 app << deck
 app.play
